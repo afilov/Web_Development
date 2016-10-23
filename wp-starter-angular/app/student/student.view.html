@@ -63,15 +63,9 @@
     </div>
   </form>
 </div>
-<div ng-show="vm.entities.length > 0">
+<div ng-if="vm.entities.length > 0">
   <table st-table="vm.entities" class="table table-striped">
     <thead>
-    <tr>
-      <th colspan="5">
-        <span>Search</span>
-        <input type="text" ng-model="vm.searchText" placeholder="Enter text..."/>
-      </th>
-    </tr>
     <tr>
       <th st-sort="name">First Name</th>
       <th st-sort="surname">Last name</th>
@@ -79,10 +73,13 @@
       <th st-sort="group.name">Group</th>
       <th>Actions</th>
     </tr>
+    <tr>
+      <th colspan="5"><input st-search="" class="form-control" placeholder="global search ..." type="text"/></th>
+    </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="e in vm.entities  | filter:vm.filterFunction">
-      <td>{{e.name | uppercase}}</td>
+    <tr ng-repeat="e in vm.entities">
+      <td>{{e.name}}</td>
       <td>{{e.surname}}</td>
       <td>{{e.index}}</td>
       <td>{{e.group.name}}</td>

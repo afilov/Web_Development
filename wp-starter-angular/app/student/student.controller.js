@@ -3,11 +3,11 @@
 
   angular.module('wp-angular-starter').controller('StudentController', StudentController);
 
-  StudentController.$inject = ['$log', 'GroupService', 'StudentService','$scope'];
+  StudentController.$inject = ['$log', 'GroupService', 'StudentService', '$scope'];
 
   /* @ngInject */
 
-  function StudentController($log, GroupService, StudentService,scope) {
+  function StudentController($log, GroupService, StudentService, scope) {
     var vm = this;
     vm.title = 'Student';
     vm.save = save;
@@ -42,8 +42,7 @@
 
       var promise = StudentService.save(vm.entity);
       promise.then(successCallback, errorCallback);
-      function successCallback(data)
-      {
+      function successCallback(data) {
         loadStudents();
         vm.saveOkMsg = "Student with id " + data.id + " is saved";
         clear();
@@ -59,6 +58,7 @@
     }
 
     function loadStudents() {
+      vm.entities = [];
       StudentService.getAll().then(function (data) {
         vm.entities = data;
       });
