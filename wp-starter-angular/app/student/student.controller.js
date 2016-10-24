@@ -56,6 +56,7 @@
 
     function loadStudents() {
       vm.entities = [];
+      scope.Students = [];
       StudentService.getAll().then(function (data) {
         vm.entities = data;
         scope.Students = data;
