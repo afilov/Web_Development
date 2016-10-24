@@ -11,7 +11,6 @@
     var vm = this;
     vm.title = 'Student';
     vm.save = save;
-    vm.filterFunction = filterFunction;
     vm.searchText = "";
     vm.clear = clear;
     vm.edit = edit;
@@ -19,6 +18,7 @@
     vm.searchText = "";
     vm.entity = {};
     vm.entities = [];
+    vm.SearchField = "";
     vm.groups = [];
     vm.saveOkMsg = null;
     vm.saveErrMsg = null;
@@ -29,10 +29,6 @@
       GroupService.getAll().then(function (data) {
         vm.groups = data;
       });
-    }
-
-    function filterFunction(obj) {
-      return obj.index.indexOf(vm.searchText) > -1;
     }
 
 
