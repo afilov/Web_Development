@@ -15,6 +15,7 @@
     vm.clear = clear;
     vm.edit = edit;
     vm.remove = remove;
+    scope.Students = [];
     vm.searchText = "";
     vm.entity = {};
     vm.entities = [];
@@ -57,6 +58,7 @@
       vm.entities = [];
       StudentService.getAll().then(function (data) {
         vm.entities = data;
+        scope.Students = data;
       });
     };
 
