@@ -5,43 +5,15 @@
   <form ng-submit="vm.save()" name="form">
     <div class="panel-body">
 
-      <div class="form-group">
-        <label>Name</label>
-        <input class="form-control"
-               type="text"
-               ng-required="true"
-               ng-model="vm.entity.name">
-      </div>
-      <div class="form-group">
-        <label>Surname</label>
-        <input class="form-control"
-               type="text"
-               ng-required="true"
-               ng-model="vm.entity.surname">
-      </div>
-      <div class="form-group">
-        <label>Index</label>
-        <input class="form-control"
-               type="number"
-               ng-required="true"
-               ng-model="vm.entity.index">
-      </div>
-      <div class="form-group">
-        <label>Group</label>
-        <ui-select ng-model="vm.entity.group"
-                   ng-required="true"
-                   title="Choose group">
-          <ui-select-match
-            placeholder="Select group size...">
-            <span>{{$select.selected.name}}</span>
-          </ui-select-match>
-          <ui-select-choices
-            repeat="item in vm.groups"
-            position="auto">
-            {{item.name}}
-          </ui-select-choices>
-        </ui-select>
-      </div>
+      <wp-input wp-label="Name" wp-type="text" wp-model="vm.entity.name" wp-focus="true" wp-required="true"></wp-input>
+
+      <wp-input wp-label="Surname" wp-type="text" wp-model="vm.entity.surname" wp-focus="false" wp-required="true"></wp-input>
+
+      <wp-input wp-label="Index" wp-type="number" wp-model="vm.entity.index" wp-focus="false" wp-required="true"></wp-input>
+
+      <group-select wp-label="Group" wp-model="vm.entity.group" wp-required="true" wp-placeholder="Select group size..."></group-select>
+
+
     </div>
     <div class="panel-footer text-right">
       <div class="panel panel-danger text-center text-danger" ng-show="vm.saveErrMsg">

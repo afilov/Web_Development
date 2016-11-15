@@ -19,6 +19,7 @@ var fs = require("fs");
 var JS_APP = [
   'bower_components/angular-smart-table/dist/smart-table.min.js',
   'app/app.js',
+  'app/directive/focusme.js',
   'app/c1/c1.state.js',
   'app/c1/first.controller.js',
   'app/c1/second.controller.js',
@@ -28,11 +29,16 @@ var JS_APP = [
   'app/student/student.controller.js',
   'app/student/student.local.factory.js',
   'app/student/student.state.js',
+  'app/components/component.js',
+  'app/components/selectcomponent.js',
+  'app/directives/angularfocus.js',
   'app/default-page/**.js'
 ];
 
 var TEMPLATES_SRC = [
   'app/group/group.view.html',
+  'app/components/componentview.html',
+  'app/components/selectcomponentview.html',
   'app/student/student.view.html',
   'app/default-page/**.html'
 ];
