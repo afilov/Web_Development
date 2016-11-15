@@ -1,0 +1,15 @@
+<div class="form-group">
+  <label>{{$ctrl.wpLabel}}</label>
+  <ui-select ng-model="$ctrl.wpModel"
+             ng-required="$ctrl.wpRequired">
+    <ui-select-match
+      placeholder="{{$ctrl.wpPlaceHolder}}">
+      <span>{{$select.selected.name}}</span>
+    </ui-select-match>
+    <ui-select-choices
+      repeat="item in $ctrl.entities"
+      position="auto">
+      {{item.name}}
+    </ui-select-choices>
+  </ui-select>
+</div>
